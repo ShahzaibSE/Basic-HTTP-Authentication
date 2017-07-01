@@ -8,14 +8,14 @@ module.exports.isAuthenticated = function(req,res,next){
   console.log(auth);
   console.log("Basic Authentication Request");
 
-  if(credientials && credientials.name == "Shahzaib" && credientials == "123"){
+  if(credientials && credientials.name == "Shahzaib" && credientials.pass == "123"){
       console.log({
           status: true,
           resCode: 200,
           isError: false,
           message: "Request Authenticated Successfully"
       });
-  }else if(credientials.name !== "Shahzaib" || credientials !== "123"){
+  }else if(credientials.name !== "Shahzaib" || credientials.pass !== "123"){
       res.send({
           status: false,
           resCode: 400,
